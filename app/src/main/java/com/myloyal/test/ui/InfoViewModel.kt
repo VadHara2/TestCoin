@@ -40,8 +40,4 @@ class InfoViewModel: ViewModel() {
         }
     }
 
-    override fun onCleared() {
-        super.onCleared()
-        viewModelScope.cancel()
-    }
 }
