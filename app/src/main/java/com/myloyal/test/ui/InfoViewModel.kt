@@ -8,6 +8,7 @@ import com.bumptech.glide.Glide
 import com.myloyal.test.App
 import com.myloyal.test.data.ApiModule
 import com.myloyal.test.models.Currency
+import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 import kotlin.collections.ArrayList
 
@@ -37,5 +38,10 @@ class InfoViewModel: ViewModel() {
               it.printStackTrace()
             }
         }
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        viewModelScope.cancel()
     }
 }
